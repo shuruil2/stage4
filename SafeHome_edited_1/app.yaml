@@ -1,0 +1,5 @@
+env_variables:
+  MYSQL_USER: test_user1 # please put in your credentials
+  MYSQL_PASSWORD: test@1234 # please put in your credentials
+  MYSQL_DB: SHT # please put in your credentials
+  MYSQL_HOST: 104.198.226.237 # please put in your credentials

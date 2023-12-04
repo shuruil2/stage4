@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Log in</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" href="{{ url_for('static', filename='img/tracker_icon.ico') }}">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles/tracker.css') }}">
+</head>
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6 offset-md-3">
+                <div class="login-form bg-light mt-4 p-4">
+                    <form action="/login" method="post" class="row g-3">
+                        <h4>Welcome Back</h4>
+                        <div class="col-12">
+                            <label>Email</label>
+                            <input type="text" name="email" class="form-control" placeholder="Email">
+                        </div>
+                        <div class="col-12">
+                            <label>Password</label>
+                            <input type="password" name="password" class="form-control" placeholder="Password">
+                        </div>
+                        {% with messages = get_flashed_messages(with_categories=true) %}
+                            {% if messages %}
+                                <div class="col-12">
+                                    <ul class="flashes list-unstyled">
+                                        <li class="text-danger">{{ messages[-1][1] }}</li>
+                                    </ul>
+                                </div>
+                            {% endif %}
+                        {% endwith %}
+                        <div class="col-12">
+                            <button type="submit" class="btn btn-dark float-end">Login</button>
+                        </div>
+                    </form>
+                    <hr class="mt-4">
+                    <div class="col-12">
+                        <p class="text-center mb-0">Have not account yet? <a href="/signup">Signup here</a></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
